@@ -17,12 +17,3 @@ public class Book extends Readable{
 		type = f;
 		}
 }
-	/*public int getPrice(){
-	}
-	
-	public int intgetListInfo(){
-		//Based on the value of Type(Book
-		//or eBook) print the list of Items
-	}
-
-}*/
