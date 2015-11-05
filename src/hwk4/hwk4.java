@@ -6,7 +6,7 @@ public class hwk4 {
 
 	public static void main(String[] args) throws IOException {
 		ArrayList<Book> books = new ArrayList<Book>();
-		File bookTxt = new File ("src/Books.txt");
+		File bookTxt = new File ("Books.txt");
 		BufferedReader br = new BufferedReader(new FileReader(bookTxt));
 		try{
 			String thisLine = null;
@@ -23,9 +23,7 @@ public class hwk4 {
 				}
 			br.close();
 		}
-		finally{
-			System.out.print("");
-		}
+		finally{}
 
 	
 
