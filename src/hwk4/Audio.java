@@ -1,7 +1,7 @@
 package hwk4;
 
-public class Readable extends Item {
-	protected String authorName;
+public class Audio extends Item {
+	protected String artistName;
 	public String getInfo(){
 		return "";
 	}

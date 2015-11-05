@@ -5,20 +5,29 @@ import java.util.*;
 public class hwk4 {
 
 	public static void main(String[] args) throws IOException {
+		
 		ArrayList<Book> books = new ArrayList<Book>();
+		ArrayList<eBook> eBooks = new ArrayList<eBook>();
+		ArrayList<MP3> MP3 = new ArrayList<MP3>();
+		ArrayList<CD> CDs = new ArrayList<CD>();
+		
 		File bookTxt = new File ("Books.txt");
+		File eBooksTxt = new File ("Books.txt");
+		File MP3Txt = new File ("Books.txt");
+		File CDTxt = new File ("Books.txt");
+		
 		BufferedReader br = new BufferedReader(new FileReader(bookTxt));
 		try{
 			String thisLine = null;
 			while ((thisLine = br.readLine()) != null) {
 				String [] bookDetails = thisLine.split(",");
 				int sNo = Integer.parseInt(bookDetails[0]);
-				String bookName = bookDetails[1];
+				String name = bookDetails[1];
 				String authorName = bookDetails[2];
 				int price = Integer.parseInt(bookDetails[3]);
 				int quantity = Integer.parseInt(bookDetails[4]);
 				String type = bookDetails[5];
-				Book current = new Book(sNo,bookName,authorName,price,quantity,type);
+				Book current = new Book(sNo,name,authorName,price,quantity,type);
 				books.add(current);
 				}
 			br.close();
