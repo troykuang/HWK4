@@ -12,9 +12,9 @@ public class hwk4 {
 		ArrayList<CD> CDs = new ArrayList<CD>();
 		
 		File bookTxt = new File ("Books.txt");
-		File eBooksTxt = new File ("Books.txt");
-		File MP3Txt = new File ("Books.txt");
-		File CDTxt = new File ("Books.txt");
+		File eBooksTxt = new File ("EBooks.txt");
+		File MP3Txt = new File ("MP3.txt");
+		File CDTxt = new File ("CDs.txt");
 		
 		BufferedReader br = new BufferedReader(new FileReader(bookTxt));
 		try{
