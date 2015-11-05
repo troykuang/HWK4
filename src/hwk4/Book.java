@@ -1,10 +1,7 @@
 package hwk4;
 
 public class Book extends Readable{
-	protected int sNo;
 	protected String bookName;
-	protected String authorName;
-	protected int price;
 	public int quantity;
 	protected String type;
 	
@@ -16,4 +13,9 @@ public class Book extends Readable{
 		quantity = e;
 		type = f;
 		}
+	public String getInfo(){
+		String s = String.format("%-7s%-20s%-7s%-7s%-10s%s\n",sNo,bookName,authorName,price,quantity,type);
+
+		return s;
+	}
 }

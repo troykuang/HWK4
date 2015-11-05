@@ -25,9 +25,8 @@ public class hwk4 {
 
 		}
 		finally{}
-
-                
-        //        System.out.println(books.toString());
+		String a = books.get(0).getInfo();
+		System.out.println(books.toString());
                 
 
 
