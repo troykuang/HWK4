@@ -22,10 +22,14 @@ public class hwk4 {
 				books.add(current);
 				}
 			br.close();
+
 		}
 		finally{}
 
-	
+                
+        //        System.out.println(books.toString());
+                
+
 
 	}
 
