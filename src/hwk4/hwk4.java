@@ -4,22 +4,17 @@ import java.util.*;
 
 public class hwk4 {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException { // main function 
+/*-----------------Create ArrayList for each type of items-----------------*/		
+		ArrayList<Book> books = new ArrayList<Book>(); // For books
+		ArrayList<eBook> eBooks = new ArrayList<eBook>(); // For eBooks
+		ArrayList<MP3> MP3 = new ArrayList<MP3>(); // For MP3
+		ArrayList<CD> CDs = new ArrayList<CD>(); // For CD
 		
-		ArrayList<Book> books = new ArrayList<Book>();
-		ArrayList<eBook> eBooks = new ArrayList<eBook>();
-		ArrayList<MP3> MP3 = new ArrayList<MP3>();
-		ArrayList<CD> CDs = new ArrayList<CD>();
-		
-		File bookTxt = new File ("Books.txt");
-		File eBookTxt = new File ("EBooks.txt");
-		File MP3Txt = new File ("MP3.txt");
-		File CDTxt = new File ("CDs.txt");
-		
-		BufferedReader brBook = new BufferedReader(new FileReader(bookTxt));
-		BufferedReader breBook = new BufferedReader(new FileReader(eBookTxt));
-		BufferedReader brMP3 = new BufferedReader(new FileReader(MP3Txt));
-		BufferedReader brCD = new BufferedReader(new FileReader(CDTxt));
+		BufferedReader brBook = new BufferedReader(new FileReader("Books.txt"));
+		BufferedReader breBook = new BufferedReader(new FileReader("EBooks.txt"));
+		BufferedReader brMP3 = new BufferedReader(new FileReader("MP3.txt"));
+		BufferedReader brCD = new BufferedReader(new FileReader("CDs.txt"));
 		
 		String thisLine = null;
 		while ((thisLine = brBook.readLine()) != null) {
@@ -55,11 +50,23 @@ public class hwk4 {
 			MP3 current = new MP3(sNo,name,artistName,price,quantity,type);
 			MP3.add(current);
 			}
+		while ((thisLine = brCD.readLine()) != null) {
+			String [] CDDetails = thisLine.split(",");
+			int sNo = Integer.parseInt(CDDetails[0]);
+			String name = CDDetails[1];
+			String artistName = CDDetails[2];
+			int price = Integer.parseInt(CDDetails[3]);
+			int quantity = Integer.parseInt(CDDetails[4]);
+			String type = CDDetails[5];
+			CD current = new CD(sNo,name,artistName,price,quantity,type);
+			CDs.add(current);
+			}
 		
 	
 		brBook.close();
 		breBook.close();
 		brMP3.close();
+		brCD.close();
 		String a = books.get(0).getInfo();
 		System.out.println(books.toString());
                 
