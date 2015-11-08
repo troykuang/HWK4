@@ -67,7 +67,6 @@ public class hwk4 {
 		breBook.close();
 		brMP3.close();
 		brCD.close();
-		String a = books.get(0).getInfo();
 		System.out.println(books.toString());
                 
 
