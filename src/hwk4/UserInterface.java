@@ -12,8 +12,12 @@ public class UserInterface {
 		int page = a;
 		switch (page) {
 			case 1: 
+				System.out.println("1.Sign In");
+				System.out.println("2.Sign Up");
+				System.out.println("Choose Your Option:");
 				break;
 			case 2: 
+				
 				break;
 			case 3: 
 				break;
