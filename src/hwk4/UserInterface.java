@@ -6,34 +6,59 @@ public class UserInterface {
 	private ArrayList audioProducts;
 	private int currentPage;
 	public int getCurrentPage(){
-		return 0;
+		return currentPage;
 	}
 	public void changeCurrentPage(int a){
-		int page = a;
-		switch (page) {
-			case 1: 
-				System.out.println("1.Sign In");
-				System.out.println("2.Sign Up");
+		currentPage = a;
+		switch (currentPage) {
+			case 1: // Login page
+				System.out.println("1. Sign In");
+				System.out.println("2. Sign Up");
+				System.out.println();
 				System.out.println("Choose Your Option:");
 				break;
-			case 2: 
-				
+			case 2: // New user sign up
+				System.out.println("Choose Your Username:");
 				break;
-			case 3: 
+			case 3: // 
+				System.out.println("Enter Your Username:");
 				break;
 			case 4: 
+				System.out.println("Enter Your Username:");
 				break;
 			case 5: 
+				System.out.println("1. View Items By Category");
+				System.out.println("2. View Shooping Cart");
+				System.out.println("3. Sign Out");
+				System.out.println();
+				System.out.println("Choose Your Option:");
 				break;
 			case 6: 
+				System.out.println("1. Readables");
+				System.out.println("2. Aduio");
+				System.out.println();
+				System.out.println("Choose Your Option:");
+				System.out.println();
+				System.out.println("Press -1 to Return to Previous Menu");
 				break;
-			case 7: 
+			case 7: // Shopping cart
 				break;
 			case 8: 
+				System.out.println("Readables:");
+				System.out.println();
+				String s1 = String.format("%-7s%-20s%-7s%-7s%-10s%s\n","sNo","name","authorName","price","quantity","type");
+				System.out.println(s1);
+				//TODO: Objects of Readable
 				break;
 			case 9: 
+				System.out.println("Audios:");
+				System.out.println();
+				String s2 = String.format("%-7s%-20s%-7s%-7s%-10s%s\n","sNo","name","authorName","price","quantity","type");
+				System.out.println(s2);
+				//TODO: Objects of Audio
 				break;
 			case 10: 
+				//TODO: shopping cart
 				break;
 		}	
 		

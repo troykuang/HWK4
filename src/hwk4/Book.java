@@ -11,7 +11,6 @@ public class Book extends Readable{
 		}
 	public String getInfo(){
 		String s = String.format("%-7s%-20s%-7s%-7s%-10s%s\n",sNo,name,authorName,price,quantity,type);
-
 		return s;
 	}
 }
