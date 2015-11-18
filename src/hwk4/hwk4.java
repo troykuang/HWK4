@@ -66,29 +66,67 @@ public class hwk4 {
 		breBook.close();
 		brMP3.close();
 		brCD.close();
-		System.out.println(books.toString());
+	//	System.out.println(books.toString());
+/*----------------------------------Page Navigation----------------------------------*/
 		
 		UserInterface ui = new UserInterface();
+		Scanner sc;
 		ui.changeCurrentPage(1);
 		while (true) {
 			int currentPage = ui.getCurrentPage();
 			switch (currentPage) {
 			case 1: // Login page
-				Scanner sc = new Scanner(System.in);
-				int option = sc.nextInt();
-				System.out.println("1. Sign In");
-				System.out.println("2. Sign Up");
-				System.out.println();
-				System.out.println("Choose Your Option:");
-				sc.close();
+				Scanner sc1 = new Scanner(System.in);
+				int option = sc1.nextInt();
+				if (option == 1) {
+					ui.changeCurrentPage(3); // Choose 1.Sign in --> Page 3: Sign In page
+				}else if (option ==2 ){
+					ui.changeCurrentPage(2); // Choose 2.Sign up --> Page 2: Sign up page
+				}
 				break;
 			case 2: // New user sign up page
-				System.out.println("Choose Your Username:");
+				// Just record the name of the user and return to login page(case 1)
+				Scanner sc2 = new Scanner(System.in);
+				String newUserName = sc2.next();
+				User newUser = new User();
+				newUser.getUsername(newUserName); // stores the user name
+				PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("Users.txt", true)));
+				out.println(newUserName);
+			    out.close();
+			    System.out.println("Username Successfully Added!");
+				System.out.println();
+
+				ui.changeCurrentPage(1); // After name is added back to login page
 				break;
 			case 3: // Sign in page
 				System.out.println("Enter Your Username:");
+				Scanner sc3 = new Scanner(System.in);
+				String userName = sc3.next(); 
+				Scanner scanner=new Scanner("Users.txt");
+				List<String> list=new ArrayList<>();
+				while(scanner.hasNextLine()){
+					list.add(scanner.nextLine());
+					}
+				if(list.contains(userName)){ // If the userName is legal(user name exists) / illegal(user name does not exist)
+					System.out.println("Hello" + userName);
+					User current = new User();
+					current.getUsername(userName);
+					
+					
+					  // found.
+					}else{
+						System.out.println("No Access");
+						ui.changeCurrentPage(1);
+						break;
+					 // not found
+					}
+				
+				
+				
+				
+				
 				break;
-			case 5: // Main menu page
+		/*	case 5: // Main menu page
 				System.out.println("1. View Items By Category");
 				System.out.println("2. View Shooping Cart");
 				System.out.println("3. Sign Out");
@@ -121,7 +159,7 @@ public class hwk4 {
 				break;
 			case 10: // checkout
 				//TODO: shopping cart
-				break;
+				break; */
 			}
 			
 		}
